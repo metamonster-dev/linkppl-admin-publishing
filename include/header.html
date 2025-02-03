@@ -1,0 +1,21 @@
+<!-- 공통 헤더 영역 -->
+<div class="user_area">
+  <p class="welcome"><b>관리자</b>님 안녕하세요.</p>
+  <div class="my_layer">
+    <button onclick="confirm('로그아웃 하시겠습니까?')" type="button">
+      로그아웃
+    </button>
+  </div>
+</div>
+
+<script>
+  $(".welcome").click(function (e) {
+    e.stopPropagation();
+    $(".my_layer").toggleClass("on");
+  });
+  $("html").click(function (e) {
+    if (!$(e.target).hasClass("welcome")) {
+      $(".my_layer").removeClass("on");
+    }
+  });
+</script>

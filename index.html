@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <title>링플 ADMIN 퍼블리싱 화면</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./admin/css/custom.css" />
+    <link rel="stylesheet" href="./admin/css/common.css" />
+    <!-- JS -->
+    <script src="./admin/js/admin.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        padding: 40px 20px;
+      }
+      h1 {
+        font-size: 18px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      a {
+        color: #007bff;
+        text-decoration: underline;
+      }
+      h2 {
+        margin-bottom: 20px;
+        padding: 20px;
+        background: #666;
+        color: #fff;
+      }
+      h2 span {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+      .table_defalt {
+        width: 100%;
+        border-collapse: collapse;
+        border: 0;
+        border-bottom: 1px solid #ddd;
+        table-layout: fixed;
+        font-size: 14px;
+      }
+      .table_defalt th,
+      .table_defalt td {
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 8px;
+        margin: 0;
+      }
+      .table_defalt tbody tr:last-child th,
+      .table_defalt tbody tr:last-child td {
+        border-bottom: 0;
+      }
+      .table_defalt th {
+        background: #eee;
+      }
+      .table_defalt td {
+        background: #fff;
+        color: #666;
+      }
+      .table_defalt td.text_left {
+        text-align: left;
+      }
+      .table_defalt td input {
+        width: 100%;
+      }
+      .table_defalt td input:read-only {
+        background: #f2f2f2;
+      }
+      .table_defalt button.in_btn {
+        width: 100%;
+      }
+      .remove {
+        text-decoration: line-through;
+        background: #ccc !important;
+      }
+      .remove a {
+        color: #666 !important;
+        text-decoration: line-through;
+      }
+      .space {
+        background: #f2f2f2 !important;
+        height: 36px;
+      }
+      .tap_menu {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 8px;
+      }
+      .tap_menu li {
+        padding: 0 8px 5px;
+        cursor: pointer;
+      }
+      .tap_menu li.on {
+        font-weight: 800;
+        border-bottom: 2px solid #000;
+      }
+      section {
+        display: none;
+      }
+      section.on {
+        display: block;
+      }
+    </style>
+    <h1>링플 ADMIN 퍼블리싱 화면</h1>
+    <ul class="tap_menu">
+      <li class="on" data-name="tap01">ADMIN</li>
+    </ul>
+    <section id="tap01" class="on">
+      <h2>ADMIN ( PC ONLY )</h2>
+      <table class="table_defalt">
+        <thead>
+          <tr>
+            <th width="80px">번호</th>
+            <th width="20%">화면구분</th>
+            <th>화면명</th>
+            <th>링크</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="count"></td>
+            <td>관리자 로그인</td>
+            <td>관리자 로그인</td>
+            <td>
+              <a target="_blank" href="./login.html"
+                >./login.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>대시보드</td>
+            <td>대시보드</td>
+            <td>
+              <a target="_blank" href="./dashboard.html"
+                >./dashboard.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="8">회원관리</td>
+            <td>가입승인</td>
+            <td>
+              <a target="_blank" href="./member01.html"
+                >./member01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>가입승인-상세</td>
+            <td>
+              <a target="_blank" href="./member01_detail.html"
+                >./member01_detail.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>일반회원</td>
+            <td>
+              <a target="_blank" href="./admin/member02.html"
+                >./admin/member02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>일반회원-상세</td>
+            <td>
+              <a target="_blank" href="./admin/member02_detail.html"
+                >./admin/member02_detail.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>탈퇴회원</td>
+            <td>
+              <a target="_blank" href="./admin/member03.html"
+                >./admin/member03.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>탈퇴회원-상세</td>
+            <td>
+              <a target="_blank" href="./admin/member03_detail.html"
+                >./admin/member03_detail.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>계정승인</td>
+            <td>
+              <a target="_blank" href="./admin/member03.html"
+                >./admin/member04.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>계정승인-상세</td>
+            <td>
+              <a target="_blank" href="./admin/member03_detail.html"
+                >./admin/member04_detail.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="5">캠페인관리</td>
+            <td>캠페인상품관리</td>
+            <td>
+              <a target="_blank" href="./campaign01.html"
+                >./campaign01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>캠페인상품-상품등록</td>
+            <td>
+              <a target="_blank" href="./campaign01_add.html"
+                >./campaign01_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>캠페인상품-상품수정</td>
+            <td>
+              <a target="_blank" href="./campaign01_edit.html"
+                >./campaign01_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>기획전</td>
+            <td>
+              <a target="_blank" href="./campaign02.html"
+                >./campaign02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>기획전-등록</td>
+            <td>
+              <a target="_blank" href="./admin/product01_add.html"
+                >./admin/product01_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="5">주문관리</td>
+            <td>가이드러너</td>
+            <td>
+              <a target="_blank" href="./admin/order01.html"
+                >./admin/order01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>딥파인더</td>
+            <td>
+              <a target="_blank" href="./admin/order02.html"
+                >./admin/order02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>아트마켓</td>
+            <td>
+              <a target="_blank" href="./admin/order03.html"
+                >./admin/order03.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>취소관리</td>
+            <td>
+              <a target="_blank" href="./admin/order04.html"
+                >./admin/order04.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>반품관리</td>
+            <td>
+              <a target="_blank" href="./admin/order05.html"
+                >./admin/order05.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>캘린더관리</td>
+            <td>캘린더관리</td>
+            <td>
+              <a target="_blank" href="./admin/calendar.html"
+                >./admin/calendar.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan=4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="11">아트게더링관리</td>
+            <td>게더링</td>
+            <td>
+              <a target="_blank" href="./admin/gethering01.html"
+                >./admin/gethering01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>아티스트 소개</td>
+            <td>
+              <a target="_blank" href="./admin/gethering02.html"
+                >./admin/gethering02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>아티스트 소개 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/gethering02_add.html"
+                >./admin/gethering02_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>아티스트 소개 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/gethering02_edit.html"
+                >./admin/gethering02_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>작품 소개</td>
+            <td>
+              <a target="_blank" href="./admin/gethering03.html"
+                >./admin/gethering03.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>VOD</td>
+            <td>
+              <a target="_blank" href="./admin/gethering04.html"
+                >./admin/gethering04.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>VOD > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/gethering04_add.html"
+                >./admin/gethering04_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>VOD > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/gethering04_edit.html"
+                >./admin/gethering04_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>점자악보</td>
+            <td>
+              <a target="_blank" href="./admin/gethering05.html"
+                >./admin/gethering05.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>점자악보 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/gethering05_add.html"
+                >./admin/gethering05_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>점자악보 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/gethering05_edit.html"
+                >./admin/gethering05_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="6">소식관리</td>
+            <td>공지사항</td>
+            <td>
+              <a target="_blank" href="./admin/notice01.html"
+                >./admin/notice01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>공지사항 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/notice01_add.html"
+                >./admin/notice01_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>공지사항 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/notice01_edit.html"
+                >./admin/notice01_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>자주묻는질문</td>
+            <td>
+              <a target="_blank" href="./admin/notice02.html"
+                >./admin/notice02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>자주묻는질문 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/notice02_add.html"
+                >./admin/notice02_add.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>자주묻는질문 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/notice02_edit.html"
+                >./admin/notice02_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="2">후기관리</td>
+            <td>후기관리</td>
+            <td>
+              <a target="_blank" href="./admin/review.html"
+                >./admin/review.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>후기관리 > 상세</td>
+            <td>
+              <a target="_blank" href="./admin/review_detail.html"
+                >./admin/review_detail.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="6">문의관리</td>
+            <td>상품문의</td>
+            <td>
+              <a target="_blank" href="./admin/inquiry01.html"
+                >./admin/inquiry01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>상품문의 > 상세</td>
+            <td>
+              <a target="_blank" href="./admin/inquiry01_detail.html"
+                >./admin/inquiry01_detail.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>1:1문의</td>
+            <td>
+              <a target="_blank" href="./admin/inquiry02.html"
+                >./admin/inquiry02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>1:1문의 > 상세</td>
+            <td>
+              <a target="_blank" href="./admin/inquiry02_detail.html">
+                ./admin/inquiry02_detail.html
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>홍보/광고문의</td>
+            <td>
+              <a target="_blank" href="./admin/inquiry03.html">
+                ./admin/inquiry03.html
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="space"></td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td rowspan="10">설정</td>
+            <td>메인배너관리</td>
+            <td>
+              <a target="_blank" href="./admin/setting01.html"
+                >./admin/setting01.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>메인배너관리 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/setting01_write.html"
+                >./admin/setting01_write.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>메인배너관리 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/setting01_edit.html"
+                >./admin/setting01_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>팝업관리</td>
+            <td>
+              <a target="_blank" href="./admin/setting02.html"
+                >./admin/setting02.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>팝업관리 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/setting02_write.html"
+                >./admin/setting02_write.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>팝업관리 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/setting02_edit.html"
+                >./admin/setting02_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>계정관리</td>
+            <td>
+              <a target="_blank" href="./admin/setting03.html"
+                >./admin/setting03.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>계정관리 > 등록</td>
+            <td>
+              <a target="_blank" href="./admin/setting03_write.html"
+                >./admin/setting03_write.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>계정관리 > 수정</td>
+            <td>
+              <a target="_blank" href="./admin/setting03_edit.html"
+                >./admin/setting03_edit.html</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="count"></td>
+            <td>기본설정</td>
+            <td>
+              <a target="_blank" href="./admin/setting04.html"
+                >./admin/setting04.html</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script>
+      // 각 테이블에서 .count 엘리먼트에 순서를 매기는 함수
+      function updateCounts() {
+        $(".table_defalt").each(function () {
+          $(this)
+            .find(".count")
+            .each(function (index) {
+              $(this).text(index + 1);
+            });
+        });
+      }
+      // 페이지 로드 시 각 테이블에 순서를 매김
+      updateCounts();
+
+      // 탭 메뉴 클릭 이벤트
+      $(".tap_menu li").click(function () {
+        var tabId = $(this).attr("data-name");
+        $(".tap_menu li").removeClass("on");
+        $(this).addClass("on");
+        $("section").removeClass("on");
+        $("#" + tabId).addClass("on");
+      });
+    </script>
+  </body>
+</html>

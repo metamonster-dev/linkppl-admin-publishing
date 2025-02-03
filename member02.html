@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>회원관리 / 일반회원</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!--AOS 애니메이션-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!--스와이퍼-->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.css"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="./js/admin.js"></script>
+  </head>
+
+  <body>
+    <div class="admin_common">
+      <!----======== 관리자 레이아웃 상단    ========---->
+      <section id="admin_header_wrap">
+        <div id="admin_top_area"></div>
+        <div id="admin_side_area"></div>
+      </section>
+      <!----======== 관리자 레이아웃 상단 끝 ========---->
+      <!----======== 내용부분    ========---->
+      <section id="admin_contents_wrap">
+        <p class="title">회원관리 / 일반회원</p>
+        <article class="board">
+          <div class="filter_wrap2">
+            <div>
+              <p class="name">승인일</p>
+              <input type="date" /> - <input type="date" />
+            </div>
+            <div>
+              <p>검색어</p>
+              <select>
+                <option>전체</option>
+                <option>아이디</option>
+                <option>이름</option>
+                <option>휴대폰 번호</option>
+                <option>인스타/유튜브 아이디</option>
+              </select>
+              <input
+                class="text"
+                style="width: 260px"
+                placeholder="검색어를 입력해주세요."
+              />
+            </div>
+            <div class="btn_area">
+              <button>
+                <i class="fa fa-search" aria-hidden="true"></i>검색
+              </button>
+              <button>
+                <i class="fa fa-repeat" aria-hidden="true"></i>초기화
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article id="search_result">
+          <div class="btn_area">
+            <button onclick="open_modal('#del_account_modal')">탈퇴</button>
+            <!-- <button onclick="open_modal('#alret_modal')">
+              목록 미선택 상태 모달
+            </button> -->
+            <button class="green">
+              <i class="fa fa-download" aria-hidden="true"></i>엑셀 다운로드
+            </button>
+            <select>
+              <option>20개</option>
+              <option>30개</option>
+              <option>50개</option>
+              <option>100개</option>
+            </select>
+          </div>
+          <table class="table_defalt">
+            <thead>
+              <tr>
+                <th width="30px"><input type="checkbox" /></th>
+                <th width="50px">번호</th>
+                <th width="80px">관리</th>
+                <th width="200px">아이디</th>
+                <th width="120px">이름</th>
+                <th width="220px">휴대폰번호</th>
+                <th width="120px">생년월일</th>
+                <th width="80px">성별</th>
+                <th width="120px">승인일</th>
+                <th width="*">메모</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td>
+                  <button
+                    class="in_btn"
+                    onclick="location.href='member02_detail.html'"
+                  >
+                    상세
+                  </button>
+                </td>
+                <td>dmonster@gmail.com</td>
+                <td>김수한무</td>
+                <td>010-1234-5678</td>
+                <td>1990-05-27</td>
+                <td>남자</td>
+                <td>2025-01-14</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>2</td>
+                <td>
+                  <button
+                    class="in_btn"
+                    onclick="location.href='member02_detail.html'"
+                  >
+                    상세
+                  </button>
+                </td>
+                <td>dmonster@gmail.com</td>
+                <td>거북이</td>
+                <td>010-1234-5678</td>
+                <td>1990-05-27</td>
+                <td>남자</td>
+                <td>2025-01-15</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>3</td>
+                <td>
+                  <button
+                    class="in_btn"
+                    onclick="location.href='member02_detail.html'"
+                  >
+                    상세
+                  </button>
+                </td>
+                <td>dmonster@gmail.com</td>
+                <td>거북이</td>
+                <td>010-1234-5678</td>
+                <td>1990-05-27</td>
+                <td>남자</td>
+                <td>2025-01-14</td>
+                <td>메모 입니다.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="pagination" class="page_wrap"></div>
+        </article>
+        <!----======== 내용부분 끝 ========---->
+
+        <!-- ======== 모달창 ========-->
+        <!-- 탈퇴 모달 -->
+        <article id="del_account_modal" class="order_modal fullpage_modal">
+          <div class="board" style="height: 240px; top: 200px; width: 710px">
+            <a class="circle_btn" onclick="close_modal()"
+              ><i class="fa fa-times" aria-hidden="true"></i
+            ></a>
+            <p class="title"></p>
+            <p class="alret_txt">탈퇴 하시겠습니까?</p>
+            <div class="btn_area">
+              <button onclick="close_modal()">취소</button>
+              <button type="submit">확인</button>
+            </div>
+          </div>
+        </article>
+        <!--목록 미선택 상태 모달 -->
+        <article id="alret_modal" class="order_modal fullpage_modal">
+          <div class="board" style="height: 250px; top: 200px; width: 710px">
+            <a class="circle_btn" onclick="close_modal()"
+              ><i class="fa fa-times" aria-hidden="true"></i
+            ></a>
+            <p class="title"></p>
+            <p class="alret_txt">목록을 선택해주세요.</p>
+            <div class="btn_area">
+              <button onclick="close_modal()">확인</button>
+            </div>
+          </div>
+        </article>
+        <!-- ======== 모달창 ========-->
+      </section>
+      <!----======== 관리자 레이아웃 하단    ========---->
+      <section id="admin_footer_wrap"></section>
+      <!----======== 관리자 레이아웃 하단 끝 ========---->
+    </div>
+
+    <script>
+      // 공통 영역
+      $(document).ready(function () {
+        $("#admin_top_area").load("./include/header.html");
+        $("#admin_side_area").load("./include/sidebar.html");
+        $("#pagination").load("./include/pagination.html");
+        $("#admin_footer_wrap").load("./include/footer.html");
+      });
+    </script>
+  </body>
+</html>

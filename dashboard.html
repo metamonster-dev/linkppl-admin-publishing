@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>대시보드</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!--AOS 애니메이션-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!--스와이퍼-->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.css"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./js/admin.js"></script>
+  </head>
+
+  <body>
+    <div class="admin_common">
+      <!----======== 관리자 레이아웃 상단    ========---->
+      <section id="admin_header_wrap">
+        <div id="admin_top_area"></div>
+        <div id="admin_side_area"></div>
+      </section>
+      <!----======== 관리자 레이아웃 상단 끝 ========---->
+      <section id="admin_contents_wrap">
+        <!----======== 내용부분 ========---->
+        <article>
+          <p class="title">대시보드</p>
+          <div class="board01_wrap">
+            <div class="board board01">
+              <p class="board_name">캠패인 지원</p>
+              <ul>
+                <li>
+                  <p class="bh">신청 건</p>
+                  <p class="bb">
+                    <a href="./order01.html" class="accent">0</a>건
+                  </p>
+                </li>
+                <li>
+                  <p class="bh">선정 건</p>
+                  <p class="bb">
+                    <a href="./order01.html" class="accent">0</a>건
+                  </p>
+                </li>
+                <li>
+                  <p class="bh">취소 건</p>
+                  <p class="bb">
+                    <a href="./order01.html" class="accent">0</a>건
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="board board01">
+              <p class="board_name">캠페인 현황</p>
+              <ul>
+                <li>
+                  <p class="bh">진행 중</p>
+                  <p class="bb">
+                    <a href="./order02.html" class="accent">0</a>건
+                  </p>
+                </li>
+                <li>
+                  <p class="bh">진행 완료</p>
+                  <p class="bb">
+                    <a href="./order02.html" class="accent">0</a>건
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="board board01">
+              <p class="board_name">포인트 현황</p>
+              <ul>
+                <li>
+                  <p class="bh">출금완료 금액</p>
+                  <p class="bb">
+                    <a href="./order03.html" class="accent">0</a>건
+                  </p>
+                </li>
+                <li>
+                  <p class="bh">출금예정 포인트</p>
+                  <p class="bb">
+                    <a href="./order03.html" class="accent">0</a>건
+                  </p>
+                </li>
+                <li>
+                  <p class="bh">적립 포인트</p>
+                  <p class="bb">
+                    <a href="./order03.html" class="accent">0</a>건
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="board board01">
+              <p class="board_name">회원현황</p>
+              <ul>
+                <li>
+                  <p class="bh">가입 신청</p>
+                  <p class="bb"><span class="accent">0</span>건</p>
+                </li>
+                <li>
+                  <p class="bh">가입 승인</p>
+                  <p class="bb"><span class="accent">0</span>건</p>
+                </li>
+                <li>
+                  <p class="bh">전체 회원</p>
+                  <p class="bb"><span class="accent">0</span>건</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="half">
+          <div>
+            <p class="title">캠페인 추이(건수)</p>
+            <div class="board board_chart" id="product_chart">
+              <script type="text/javascript">
+                let product_chart = echarts.init(
+                  document.getElementById("product_chart")
+                );
+                let product_option = {
+                  title: {
+                    subtext: "최근 6개월 기준",
+                    left: "right",
+                  },
+                  xAxis: {
+                    type: "category",
+                    data: ["January", "February", "March", "April"],
+                  },
+                  yAxis: {
+                    type: "value",
+                  },
+                  series: [
+                    {
+                      data: [60, 30, 90, 10, 20, 0, 20],
+                      type: "line",
+                      color: "#7F23F3",
+                    },
+                  ],
+                };
+                product_chart.setOption(product_option);
+              </script>
+            </div>
+          </div>
+          <div>
+            <p class="title">카테고리 분포</p>
+            <div class="board board_chart" id="program_chart">
+              <script type="text/javascript">
+                let program_chart = echarts.init(
+                  document.getElementById("program_chart")
+                );
+                let program_option = {
+                  title: {
+                    subtext: "최근 1개월 기준",
+                    left: "right",
+                  },
+                  tooltip: {
+                    trigger: "item",
+                    formatter: "{b}: {c} ({d}%)",
+                  },
+                  legend: {
+                    orient: "vertical",
+                    top: "middle",
+                    right: "20%",
+                    formatter: function (name) {
+                      let data = program_option.series[0].data;
+                      let item = data.find((d) => d.name === name);
+                      let total = data.reduce(
+                        (sum, item) => sum + item.value,
+                        0
+                      );
+                      let percentage = ((item.value / total) * 100).toFixed(1);
+                      return `${name}(${percentage}%)`;
+                    },
+                  },
+                  series: [
+                    {
+                      name: "카테고리",
+                      type: "pie",
+                      radius: "70%",
+                      center: ["38%", "50%"],
+                      data: [
+                        {
+                          value: 1048,
+                          name: "뷰티",
+                        },
+                        {
+                          value: 735,
+                          name: "패션",
+                        },
+                        {
+                          value: 580,
+                          name: "푸드",
+                        },
+                      ],
+                      emphasis: {
+                        itemStyle: {
+                          shadowBlur: 10,
+                          shadowOffsetX: 0,
+                          shadowColor: "rgba(0, 0, 0, 0.2)",
+                        },
+                      },
+                    },
+                  ],
+                };
+                program_chart.setOption(program_option);
+              </script>
+            </div>
+          </div>
+        </article>
+        <article style="position: relative">
+          <p class="title">1:1 문의 현황</p>
+          <a class="board02_tap_more_txt" onclick="location.href='#'"
+            >전체보기 &gt;</a
+          >
+          <table class="table_defalt">
+            <thead>
+              <tr>
+                <th width="50px">번호</th>
+                <th width="300px">아이디</th>
+                <th width="120px">이름</th>
+                <th width="*">문의 제목</th>
+                <th width="80px">답변 상태</th>
+                <th width="200px">답변 완료일</th>
+                <th width="200px">문의일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>dmonster@gmail.com</td>
+                <td>홍길동</td>
+                <td>일반문의</td>
+                <td>답변대기</td>
+                <td>-</td>
+                <td>2024-04-22</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>dmonster@gmail.com</td>
+                <td>홍길동</td>
+                <td>일반문의</td>
+                <td>답변완료</td>
+                <td>2024-04-22</td>
+                <td>2024-04-22</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+      <!----======== 관리자 레이아웃 하단    ========---->
+      <section id="admin_footer_wrap"></section>
+      <!----======== 관리자 레이아웃 하단 끝 ========---->
+    </div>
+
+    <script>
+      // 공통 영역
+      $(document).ready(function () {
+        $("#admin_top_area").load("./include/header.html");
+        $("#admin_side_area").load("./include/sidebar.html");
+        $("#admin_footer_wrap").load("./include/footer.html");
+      });
+    </script>
+  </body>
+</html>

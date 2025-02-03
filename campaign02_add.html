@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>캠페인관리 / 기획전</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!--AOS 애니메이션-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!--스와이퍼-->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.css"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="./js/admin.js"></script>
+  </head>
+
+  <body>
+    <div class="admin_common">
+      <!----======== 관리자 레이아웃 상단    ========---->
+      <section id="admin_header_wrap">
+        <div id="admin_top_area"></div>
+        <div id="admin_side_area"></div>
+      </section>
+      <!----======== 관리자 레이아웃 상단 끝 ========---->
+      <!----======== 내용부분 ========---->
+      <section id="admin_contents_wrap">
+        <p class="title">캠페인관리 / 기획전</p>
+        <article>
+          <form id="product_add_form" class="board">
+            <p class="label_name required mt_20">기획전 명</p>
+            <div class="label_wrap">
+              <label class="w-100">
+                <input
+                  type="text"
+                  class="w-100"
+                  placeholder="기획전명을 입력해주세요."
+                />
+              </label>
+            </div>
+            <p class="label_name required">카테고리</p>
+            <div class="label_wrap">
+              <label class="w-25">
+                <select class="w-100">
+                  <option>선택</option>
+                  <option>화장품/미용</option>
+                  <option>패션 의류</option>
+                  <option>식품</option>
+                  <option>가구/인테리어</option>
+                  <option>출산/육아</option>
+                  <option>반려동물</option>
+                  <option>디지털/가전</option>
+                  <option>생활/건강</option>
+                  <option>스포츠/취미/레저</option>
+                  <option>건강기능식품</option>
+                  <option>자동차</option>
+                  <option>패션 잡화</option>
+                  <option>기타</option>
+                </select>
+              </label>
+            </div>
+            <p class="label_name required">캠페인 유형</p>
+            <div class="label_wrap">
+              <label class="w-25">
+                <select class="w-100">
+                  <option>선택</option>
+                  <option>Instagram, Youtube</option>
+                  <option>Instagram</option>
+                  <option>Youtube</option>
+                </select>
+              </label>
+            </div>
+            <p class="label_name required mt_20">상품명</p>
+            <div class="label_wrap">
+              <label class="w-50">
+                <input type="text" class="w-100" />
+              </label>
+            </div>
+            <p class="label_name required mt_20">브랜드명</p>
+            <div class="label_wrap">
+              <label class="w-50">
+                <input type="text" class="w-100" />
+              </label>
+            </div>
+
+            <p class="label_name">상품 옵션 설정</p>
+            <div class="label_wrap">
+              <label class="w-25">
+                <select id="option-type" class="w-100">
+                  <option value="option">옵션 있음</option>
+                  <option value="no-option">옵션 없음</option>
+                </select>
+              </label>
+            </div>
+            <div id="option-section" class="w-50">
+              <p class="comment">* 옵션 그룹과 옵션값을 설정해주세요.</p>
+              <div class="option_wrap mt_10">
+                <div class="option_group_list">
+                  <div class="option_box">
+                    <div class="option_title">
+                      <input placeholder="옵션명 입력 (예: 사이즈, 색상)" />
+                      <button type="button" class="del">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="option_list">
+                      <ul class="sortable-list">
+                        <li class="option_item">
+                          <i class="fa fa-bars" aria-hidden="true"></i>
+                          <input placeholder="옵션값 입력" />
+                          <button type="button" class="del">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </button>
+                        </li>
+                      </ul>
+                      <button
+                        type="button"
+                        class="add_option list add_option_list"
+                      >
+                        + 옵션값 추가
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="add_option" id="add_option_group">
+                  + 옵션 그룹 추가
+                </button>
+              </div>
+            </div>
+
+            <p class="label_name required mt_40">진행기간</p>
+            <label class="date_wrap">
+              <div>
+                <input type="date" required="" />
+              </div>
+              ~
+              <div>
+                <input type="date" required="" />
+              </div>
+            </label>
+
+            <p class="label_name required mt_20">지원가능 인원 설정</p>
+            <div class="label_wrap">
+              <label class="w-25">
+                <input
+                  type="number"
+                  class="w-100"
+                  placeholder="숫자만 입력가능합니다."
+                />
+              </label>
+            </div>
+
+            <p class="label_name required mt_20">리워드 보상</p>
+            <div class="label_wrap">
+              <label class="w-25">
+                <input
+                  type="number"
+                  class="w-100"
+                  placeholder="숫자만 입력해주세요."
+                />
+              </label>
+            </div>
+
+            <p class="label_name mt_20 required">진행상태</p>
+            <div>
+              <ul class="filter_select mb_20">
+                <li class="on">대기</li>
+                <li>진행중</li>
+                <li>종료</li>
+              </ul>
+            </div>
+
+            <p class="label_name mt_20 required">메인노출</p>
+            <div>
+              <ul class="filter_select mb_20">
+                <li class="on">노출</li>
+                <li>비노출</li>
+              </ul>
+            </div>
+
+            <p class="label_name mt_20 required">캠페인 정보</p>
+            <div>
+              <ul class="filter_select mb_20">
+                <li class="on">캠페인 전</li>
+                <li>캠페인 중</li>
+                <li>캠페인 후</li>
+              </ul>
+              <label class="w-50">
+                <textarea class="w-100"></textarea>
+                <p class="comment"><span class="count_leng">0</span> / 5000</p>
+              </label>
+            </div>
+
+            <p class="label_name mt_40">상품이미지</p>
+            <div class="imgfile_wrap mt_15">
+              <div>
+                <p class="label_name2 required">대표 이미지</p>
+                <label class="imgfile">
+                  <a class="remove_img"
+                    ><i class="fa fa-times-circle" aria-hidden="true"></i
+                  ></a>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input
+                    name="imgfile"
+                    type="file"
+                    accept=".png, .jpg"
+                    required
+                  />
+                </label>
+              </div>
+              <div>
+                <p class="label_name2">추가 이미지1</p>
+                <label class="imgfile">
+                  <a class="remove_img"
+                    ><i class="fa fa-times-circle" aria-hidden="true"></i
+                  ></a>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input
+                    name="imgfile"
+                    type="file"
+                    accept=".png, .jpg"
+                    required
+                  />
+                </label>
+              </div>
+              <div>
+                <p class="label_name2">추가 이미지2</p>
+                <label class="imgfile">
+                  <a class="remove_img"
+                    ><i class="fa fa-times-circle" aria-hidden="true"></i
+                  ></a>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input
+                    name="imgfile"
+                    type="file"
+                    accept=".png, .jpg"
+                    required
+                  />
+                </label>
+              </div>
+              <div>
+                <p class="label_name2">추가 이미지3</p>
+                <label class="imgfile">
+                  <a class="remove_img"
+                    ><i class="fa fa-times-circle" aria-hidden="true"></i
+                  ></a>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input
+                    name="imgfile"
+                    type="file"
+                    accept=".png, .jpg"
+                    required
+                  />
+                </label>
+              </div>
+              <div>
+                <p class="label_name2">추가 이미지4</p>
+                <label class="imgfile">
+                  <a class="remove_img"
+                    ><i class="fa fa-times-circle" aria-hidden="true"></i
+                  ></a>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input
+                    name="imgfile"
+                    type="file"
+                    accept=".png, .jpg"
+                    required
+                  />
+                </label>
+              </div>
+              <div>
+                <p class="label_name2">추가 이미지5</p>
+                <label class="imgfile">
+                  <a class="remove_img"
+                    ><i class="fa fa-times-circle" aria-hidden="true"></i
+                  ></a>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input
+                    name="imgfile"
+                    type="file"
+                    accept=".png, .jpg"
+                    required
+                  />
+                </label>
+              </div>
+            </div>
+            <p class="comment">* 1000×1000 px</p>
+            <p class="comment">* jpg, png 파일만 등록가능</p>
+
+            <p class="label_name mt_40 required">제품상세정보</p>
+            <div id="content"></div>
+            <script>
+              const editor = new toastui.Editor({
+                el: document.querySelector("#content"), // 에디터를 적용할 요소 (컨테이너)
+                height: "500px", // 에디터 영역의 높이 값 (OOOpx || auto)
+                initialEditType: "wysiwyg", // 최초로 보여줄 에디터 타입 (markdown || wysiwyg)
+                initialValue: "내용을 입력해 주세요.", // 내용의 초기 값으로, 반드시 마크다운 문자열 형태여야 함
+                previewStyle: "vertical", // 마크다운 프리뷰 스타일 (tab || vertical)
+              });
+            </script>
+          </form>
+          <div class="btn_area btm mt_40">
+            <button onclick="location.href='campaign01.html'" type="button">
+              목록
+            </button>
+            <button type="submit">등록</button>
+          </div>
+        </article>
+      </section>
+      <!----======== 내용부분 끝 ========---->
+      <!----======== 관리자 레이아웃 하단    ========---->
+      <section id="admin_footer_wrap"></section>
+      <!----======== 관리자 레이아웃 하단 끝 ========---->
+    </div>
+    <script>
+      // 옵션
+      $(document).ready(function () {
+        let optionIndex = 0;
+
+        // 옵션 유형 선택에 따라 영역 보이기/숨기기
+        $("#option-type").change(function () {
+          if ($(this).val() === "option") {
+            $("#option-section").removeClass("hidden");
+          } else {
+            $("#option-section").addClass("hidden");
+          }
+        });
+
+        $("#add_option_group").click(function () {
+          optionIndex++;
+          let optionHtml = `
+                    <div class="option_box">
+                        <div class="option_title">
+                            <input placeholder="옵션명 입력 (예: 사이즈, 색상)" />
+                            <button type="button" class="del remove-option">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="option_list">
+                          <ul class="sortable-list">
+                            <li class="option_item">
+                              <i class="fa fa-bars" aria-hidden="true"></i>
+                              <input placeholder="옵션값 입력" />
+                              <button type="button" class="del">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                              </button>
+                            </li>
+                          </ul>
+                          <button type="button" class="add_option list add_option_list">+ 옵션값 추가</button>
+                        </div>
+                    </div>
+                `;
+          $(".option_group_list").append(optionHtml);
+        });
+
+        $(document).on("click", ".add_option_list", function () {
+          let valueHtml = `<li class="option_item">
+                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                    <input placeholder="옵션값 입력" />
+                                    <button type="button" class="del remove-value">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </button>
+                                </li>`;
+          $(this).siblings("ul").append(valueHtml);
+        });
+
+        $(document).on("click", ".remove-value", function () {
+          $(this).parent().remove();
+        });
+
+        $(document).on("click", ".remove-option", function () {
+          $(this).closest(".option_box").remove();
+        });
+
+        $(document).on("mouseenter", ".sortable-list", function () {
+          $(this).sortable({ axis: "y", handle: ".fa-bars" });
+        });
+      });
+    </script>
+    <script>
+      // 공통 영역
+      $(document).ready(function () {
+        $("#admin_top_area").load("./include/header.html");
+        $("#admin_side_area").load("./include/sidebar.html");
+        $("#admin_footer_wrap").load("./include/footer.html");
+      });
+    </script>
+  </body>
+</html>

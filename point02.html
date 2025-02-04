@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>회원관리 / 탈퇴회원</title>
+    <title>포인트관리 / 출금요청</title>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -54,22 +54,15 @@
       <!----======== 관리자 레이아웃 상단 끝 ========---->
       <!----======== 내용부분    ========---->
       <section id="admin_contents_wrap">
-        <p class="title">회원관리 / 탈퇴회원</p>
+        <p class="title">포인트관리 / 출금요청</p>
         <article class="board">
           <div class="filter_wrap">
             <div>
-              <p class="name">승인일</p>
+              <p class="name">요청일</p>
               <input type="date" /> - <input type="date" />
             </div>
             <div>
               <p>검색어</p>
-              <select>
-                <option>전체</option>
-                <option>아이디</option>
-                <option>이름</option>
-                <option>휴대폰 번호</option>
-                <option>인스타/유튜브 아이디</option>
-              </select>
               <input
                 class="text"
                 style="width: 260px"
@@ -87,92 +80,70 @@
 
         <article id="search_result">
           <div class="btn_area">
-            <button onclick="open_modal('#revert_account_modal')">복구</button>
-            <!-- <button onclick="open_modal('#alret_modal')">
-              목록 미선택 상태 모달
-            </button> -->
-            <button class="green">
-              <i class="fa fa-download" aria-hidden="true"></i>엑셀 다운로드
-            </button>
-            <select>
-              <option>20개</option>
-              <option>30개</option>
-              <option>50개</option>
-              <option>100개</option>
+            상태&nbsp;
+            <select class="right">
+              <option>대기</option>
+              <option>완료</option>
             </select>
+            <button>출금완료</button>
           </div>
           <table class="table_defalt">
             <thead>
               <tr>
                 <th width="30px"><input type="checkbox" /></th>
-                <th width="50px">번호</th>
                 <th width="80px">관리</th>
-                <th width="200px">아이디</th>
+                <th width="*">아이디</th>
                 <th width="120px">이름</th>
-                <th width="220px">휴대폰번호</th>
+                <th width="120px">휴대폰번호</th>
                 <th width="120px">생년월일</th>
                 <th width="80px">성별</th>
-                <th width="120px">탈퇴일</th>
-                <th width="*">메모</th>
+                <th width="*">출금요청 포인트</th>
+                <th width="100px">상태</th>
+                <th width="180px">처리일</th>
+                <th width="180px">출금요청일</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><input type="checkbox" /></td>
-                <td>1</td>
                 <td>
                   <button
                     class="in_btn"
-                    onclick="location.href='member03_detail.html'"
+                    onclick="location.href='point02_detail.html'"
                   >
                     상세
                   </button>
                 </td>
-                <td>dmonster@gmail.com</td>
-                <td>김수한무</td>
+
+                <td>link8282@naver.com</td>
+                <td>홍길동</td>
                 <td>010-1234-5678</td>
-                <td>1990-05-27</td>
-                <td>남자</td>
-                <td>2025-01-14</td>
+                <td>1989-05-27</td>
+                <td>여자</td>
+                <td>100P</td>
+                <td>대기</td>
                 <td>-</td>
+                <td>2025-01-20</td>
               </tr>
               <tr>
                 <td><input type="checkbox" /></td>
-                <td>2</td>
                 <td>
                   <button
                     class="in_btn"
-                    onclick="location.href='member03_detail.html'"
+                    onclick="location.href='point02_detail.html'"
                   >
                     상세
                   </button>
                 </td>
-                <td>dmonster@gmail.com</td>
-                <td>거북이</td>
+                <td>link8282@naver.com</td>
+                <td>홍길동</td>
                 <td>010-1234-5678</td>
-                <td>1990-05-27</td>
-                <td>남자</td>
-                <td>2025-01-15</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>3</td>
-                <td>
-                  <button
-                    class="in_btn"
-                    onclick="location.href='member03_detail.html'"
-                  >
-                    상세
-                  </button>
-                </td>
-                <td>dmonster@gmail.com</td>
-                <td>거북이</td>
-                <td>010-1234-5678</td>
-                <td>1990-05-27</td>
-                <td>남자</td>
-                <td>2025-01-14</td>
-                <td>메모 입니다.</td>
+                <td>1989-05-27</td>
+                <td>여자</td>
+                <td>100P</td>
+                <td>완료</td>
+                <td>2025-01-21</td>
+                <td>2025-01-20</td>
               </tr>
             </tbody>
           </table>
@@ -181,14 +152,37 @@
         <!----======== 내용부분 끝 ========---->
 
         <!-- ======== 모달창 ========-->
-        <!-- 복구 모달 -->
-        <article id="revert_account_modal" class="order_modal fullpage_modal">
+        <!-- 승인 모달 -->
+        <article id="complete_modal" class="order_modal fullpage_modal">
           <div class="board" style="height: 240px; top: 200px; width: 710px">
             <a class="circle_btn" onclick="close_modal()"
               ><i class="fa fa-times" aria-hidden="true"></i
             ></a>
             <p class="title"></p>
-            <p class="alret_txt">복구 하시겠습니까?</p>
+            <p class="alret_txt">승인 하시겠습니까?</p>
+            <div class="btn_area">
+              <button onclick="close_modal()">취소</button>
+              <button type="submit">확인</button>
+            </div>
+          </div>
+        </article>
+        <!--반려 모달 -->
+        <article id="reject_modal" class="order_modal fullpage_modal">
+          <div class="board" style="height: 330px; top: 200px; width: 900px">
+            <a class="circle_btn" onclick="close_modal()"
+              ><i class="fa fa-times" aria-hidden="true"></i
+            ></a>
+            <p class="title">반려</p>
+            <div class="label_wrap">
+              <label class="w-100 mb-0">
+                <input
+                  type="text"
+                  class="w-100"
+                  placeholder="반려사유를 입력해주세요."
+                />
+                <p class="comment"><span class="count_leng">0</span> / 50</p>
+              </label>
+            </div>
             <div class="btn_area">
               <button onclick="close_modal()">취소</button>
               <button type="submit">확인</button>

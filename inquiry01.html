@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>캠페인관리 / 기획전</title>
+    <title>문의관리</title>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -52,31 +52,36 @@
         <div id="admin_side_area"></div>
       </section>
       <!----======== 관리자 레이아웃 상단 끝 ========---->
-      <!----======== 내용부분    ========---->
+      <!----======== 내용부분 ========---->
       <section id="admin_contents_wrap">
-        <p class="title">캠페인관리 / 기획전</p>
-        <article class="board">
+        <p class="title">문의관리</p>
+        <article class="fillter_board board">
           <div class="filter_wrap">
             <div>
-              <p class="name">등록일</p>
+              <p>작성일</p>
               <input type="date" /> - <input type="date" />
             </div>
             <div>
               <p>검색어</p>
+              <select>
+                <option>전체</option>
+                <option>답변대기</option>
+                <option>답변완료</option>
+              </select>
               <input
                 class="text"
                 style="width: 260px"
-                placeholder="기획전명을 입력해주세요."
+                placeholder="검색어를 입력해주세요."
               />
             </div>
           </div>
           <div class="filter_wrap2">
             <div>
-              <p>게시여부</p>
+              <p>답변상태</p>
               <ul class="filter_select">
                 <li class="on">전체</li>
-                <li>게시</li>
-                <li>미게시</li>
+                <li>답변대기</li>
+                <li>답변완료</li>
               </ul>
             </div>
             <div class="btn_area">
@@ -91,103 +96,45 @@
         </article>
 
         <article id="search_result">
-          <div class="btn_area">
-            <button onclick="location.href='#none'" type="button" class="right">
-              선택삭제
-            </button>
-            <button onclick="location.href='campaign02_add.html'">
-              기획전 등록
-            </button>
-          </div>
           <table class="table_defalt">
             <thead>
               <tr>
-                <th width="30px"><input type="checkbox" /></th>
-                <th width="80px">번호</th>
-                <th width="*">기획전 명</th>
-                <th width="120px">메인노출</th>
-                <th width="180px">게시여부</th>
-                <th width="180px">등록일</th>
-                <th width="140px">관리</th>
+                <th width="50px">번호</th>
+                <th width="80px">관리</th>
+                <th width="120px">작성자 아이디</th>
+                <th width="120px">작성자 이름</th>
+                <th width="*">문의 제목</th>
+                <th width="80px">답변상태</th>
+                <th width="120px">작성일</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><input type="checkbox" /></td>
                 <td>1</td>
-                <td>연말결산 어워드</td>
-                <td>노출</td>
-                <td>게시</td>
-                <td>2025-01-20</td>
-                <td class="td_buttons">
-                  <button class="in_btn">수정</button>
-                  <button class="in_btn">삭제</button>
+                <td>
+                  <button
+                    class="in_btn"
+                    onclick="location.href='inquiry01_detail.html'"
+                  >
+                    상세
+                  </button>
                 </td>
+                <td>dmonster</td>
+                <td>홍길동</td>
+                <td>문의 제목 노출</td>
+                <td>답변대기</td>
+                <td>2024-04-22</td>
               </tr>
             </tbody>
           </table>
           <div id="pagination" class="page_wrap"></div>
         </article>
-        <!----======== 내용부분 끝 ========---->
-
-        <!-- ======== 모달창 ========-->
-        <!-- 승인 모달 -->
-        <article id="complete_modal" class="order_modal fullpage_modal">
-          <div class="board" style="height: 240px; top: 200px; width: 710px">
-            <a class="circle_btn" onclick="close_modal()"
-              ><i class="fa fa-times" aria-hidden="true"></i
-            ></a>
-            <p class="title"></p>
-            <p class="alret_txt">승인 하시겠습니까?</p>
-            <div class="btn_area">
-              <button onclick="close_modal()">취소</button>
-              <button type="submit">확인</button>
-            </div>
-          </div>
-        </article>
-        <!--반려 모달 -->
-        <article id="reject_modal" class="order_modal fullpage_modal">
-          <div class="board" style="height: 330px; top: 200px; width: 900px">
-            <a class="circle_btn" onclick="close_modal()"
-              ><i class="fa fa-times" aria-hidden="true"></i
-            ></a>
-            <p class="title">반려</p>
-            <div class="label_wrap">
-              <label class="w-100 mb-0">
-                <input
-                  type="text"
-                  class="w-100"
-                  placeholder="반려사유를 입력해주세요."
-                />
-                <p class="comment"><span class="count_leng">0</span> / 50</p>
-              </label>
-            </div>
-            <div class="btn_area">
-              <button onclick="close_modal()">취소</button>
-              <button type="submit">확인</button>
-            </div>
-          </div>
-        </article>
-        <!--목록 미선택 상태 모달 -->
-        <article id="alret_modal" class="order_modal fullpage_modal">
-          <div class="board" style="height: 250px; top: 200px; width: 710px">
-            <a class="circle_btn" onclick="close_modal()"
-              ><i class="fa fa-times" aria-hidden="true"></i
-            ></a>
-            <p class="title"></p>
-            <p class="alret_txt">목록을 선택해주세요.</p>
-            <div class="btn_area">
-              <button onclick="close_modal()">확인</button>
-            </div>
-          </div>
-        </article>
-        <!-- ======== 모달창 ========-->
       </section>
+      <!----======== 내용부분 끝 ========---->
       <!----======== 관리자 레이아웃 하단    ========---->
       <section id="admin_footer_wrap"></section>
       <!----======== 관리자 레이아웃 하단 끝 ========---->
     </div>
-
     <script>
       // 공통 영역
       $(document).ready(function () {

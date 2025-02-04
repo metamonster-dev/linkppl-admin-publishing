@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>취소/환불 정책</title>
+    <title>포인트 지급</title>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -47,23 +47,37 @@
   <body>
     <div class="adminPopup_common">
       <div class="tit_area">
-        <p class="title">취소/환불</p>
+        <p class="title">포인트 지급</p>
       </div>
       <div class="popup_contents">
-        <p class="label_name">딥파인더 취소/환불 정책</p>
-        <div id="content"></div>
-        <script>
-          const editor = new toastui.Editor({
-            el: document.querySelector("#content"), // 에디터를 적용할 요소 (컨테이너)
-            height: "350px", // 에디터 영역의 높이 값 (OOOpx || auto)
-            initialEditType: "wysiwyg", // 최초로 보여줄 에디터 타입 (markdown || wysiwyg)
-            initialValue: "내용을 입력해 주세요.", // 내용의 초기 값으로, 반드시 마크다운 문자열 형태여야 함
-            previewStyle: "vertical", // 마크다운 프리뷰 스타일 (tab || vertical)
-          });
-        </script>
+        <p class="title">포인트 지급</p>
+        <p class="label_name mt_20">지급 정보</p>
+        <table id="member_detail_table" class="table_defalt">
+          <tr>
+            <th>보유 포인트</th>
+            <td>100P</td>
+            <th>캠페인 리워드</th>
+            <td>100P</td>
+          </tr>
+          <tr>
+            <th>월 지급완료 / 상한선 포인트</th>
+            <td>1,000 / 50,000</td>
+            <th>연 지급완료/ 상한선 포인트</th>
+            <td>10,000 / 600,000</td>
+          </tr>
+        </table>
+        <p class="label_name mt_20 required">지급 포인트</p>
+        <div class="label_wrap">
+          <label class="w-100">
+            <input type="number" class="w-25" />
+          </label>
+        </div>
+        <p class="comment">
+          * 리워드 지급 완료 시 지급한 리워드는 회수할 수 없습니다.
+        </p>
         <div class="btn_area center">
-          <button onClick="window.close()">닫기</button>
-          <button>저장</button>
+          <button type="submit">지급하기</button>
+          <button onClick="window.close()">취소</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>참여관리 / 지원자관리</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!--AOS 애니메이션-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!--스와이퍼-->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.css"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="./js/admin.js"></script>
+  </head>
+
+  <body>
+    <div class="admin_common">
+      <!----======== 관리자 레이아웃 상단    ========---->
+      <section id="admin_header_wrap">
+        <div id="admin_top_area"></div>
+        <div id="admin_side_area"></div>
+      </section>
+      <!----======== 관리자 레이아웃 상단 끝 ========---->
+      <!----======== 내용부분 ========---->
+      <section id="admin_contents_wrap">
+        <p class="title">참여관리 / 지원자관리</p>
+        <article class="board">
+          <p class="board_name">
+            캠페인 정보
+            <span class="board02_tap_more_txt"
+              ><button>캠페인 바로가기</button></span
+            >
+          </p>
+          <table id="member_detail_table" class="table_defalt">
+            <tr>
+              <th>캠페인 번호</th>
+              <td>AA000001</td>
+              <th>상품명</th>
+              <td>3CE 캐시미어 허그 립스틱 10colors</td>
+            </tr>
+            <tr>
+              <th>상품옵션</th>
+              <td>오트, 퓨어블렌딩, 유어사이드, 텍스트미, 코지위스퍼</td>
+              <th>캠페인 유형</th>
+              <td>Instagram, Youtube</td>
+            </tr>
+            <tr>
+              <th>캠페인 기간</th>
+              <td>2025-01-21~2025-02-07</td>
+              <th>캠페인 모집률</th>
+              <td>30%</td>
+            </tr>
+            <tr>
+              <th>리워드</th>
+              <td>100P</td>
+              <th>진행상태</th>
+              <td>진행중</td>
+            </tr>
+          </table>
+        </article>
+        <article class="board">
+          <p class="board_name">
+            지원자 정보
+            <span class="board02_tap_more_txt board_name">총 3명</span>
+          </p>
+          <div class="btn_area">
+            지원상태&nbsp;
+            <select class="right">
+              <option>지원</option>
+              <option>선정</option>
+              <option>미선정</option>
+            </select>
+            <button>선정</button>
+            <button>미선정</button>
+          </div>
+          <table class="table_defalt">
+            <thead>
+              <tr>
+                <th width="30px"><input type="checkbox" /></th>
+                <th width="80px">번호</th>
+                <th width="200px">아이디</th>
+                <th width="*">이름</th>
+                <th width="200px">휴대폰번호</th>
+                <th width="200px">생년월일</th>
+                <th width="120px">성별</th>
+                <th width="80px">지원상태</th>
+                <th width="120px">처리일</th>
+                <th width="120px">캠페인 지원일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="30px"><input type="checkbox" /></td>
+                <td>1</td>
+                <td>link8282@naver.com</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>1989-05-27</td>
+                <td>여자</td>
+                <td>지원</td>
+                <td>-</td>
+                <td>2025-01-20</td>
+              </tr>
+              <tr>
+                <td width="30px"><input type="checkbox" /></td>
+                <td>2</td>
+                <td>link8282@naver.com</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>1989-05-27</td>
+                <td>여자</td>
+                <td>지원</td>
+                <td>-</td>
+                <td>2025-01-20</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="pagination" class="page_wrap"></div>
+        </article>
+        <div class="btm btn_area">
+          <button onclick="location.href='participate01.html'">목록</button>
+        </div>
+      </section>
+      <!----======== 내용부분 끝 ========---->
+
+      <!----======== 관리자 레이아웃 하단    ========---->
+      <section id="admin_footer_wrap"></section>
+      <!----======== 관리자 레이아웃 하단 끝 ========---->
+    </div>
+
+    <script>
+      // 공통 영역
+      $(document).ready(function () {
+        $("#admin_top_area").load("./include/header.html");
+        $("#admin_side_area").load("./include/sidebar.html");
+        $("#pagination").load("./include/pagination.html");
+        $("#admin_footer_wrap").load("./include/footer.html");
+      });
+    </script>
+  </body>
+</html>

@@ -57,14 +57,14 @@ button[type="su.label_wrapbmit"] {
   height: 36px;
   border-radius: 5px;
   color: #fff;
-  background: #7f23f3;
+  background: #353eff;
 }
 button[type="submit"]:disabled {
   color: #7e7e7e;
   background: #bbbbbb;
 }
 button[type="submit"] {
-  background: #7f23f3;
+  background: #353eff;
   color: #fff;
 }
 button.in_btn {
@@ -200,7 +200,7 @@ select:disabled {
 .board_name .accent {
   font-weight: 800;
   font-size: 16px;
-  color: #7f23f3;
+  color: #353eff;
 }
 .board_name2 {
   padding-left: 10px;
@@ -216,11 +216,11 @@ select:disabled {
   top: 9px;
   width: 3px;
   height: 3px;
-  background: #7f23f3;
+  background: #353eff;
 }
 .bb span.accent {
   font-weight: 700;
-  color: #7f23f3;
+  color: #353eff;
   margin-right: 5px;
 }
 .bb span.accent_b {
@@ -234,7 +234,7 @@ select:disabled {
 }
 .bb a.accent {
   font-weight: 700;
-  color: #7f23f3;
+  color: #353eff;
   margin-right: 5px;
 }
 .bb a.accent_b {
@@ -415,13 +415,13 @@ select:disabled {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  border-right: 3px solid #7f23f3;
+  border-right: 3px solid #353eff;
 }
 .adm_nav_depth1.on span {
-  color: #7f23f3;
+  color: #353eff;
 }
 .adm_nav_depth1.on .before {
-  color: #7f23f3;
+  color: #353eff;
 }
 .adm_nav_depth1.on ~ .adm_nav_depth2_ul {
   display: block !important;
@@ -541,7 +541,7 @@ select:disabled {
   width: 400px;
   margin-top: 30px;
   height: 50px;
-  background: #7f23f3;
+  background: #353eff;
 }
 #login button[type="submit"]:disabled {
   background: #bdbdbd;
@@ -743,8 +743,8 @@ select:disabled {
   align-items: center;
 }
 button.in_btn.accent {
-  color: #7f23f3;
-  border: 1px solid #7f23f3;
+  color: #353eff;
+  border: 1px solid #353eff;
   background: #f2f7ff;
 }
 label.imgfile {
@@ -1306,13 +1306,13 @@ input[type="file"] {
   color: #f53232;
 }
 .datepicker .ui-datepicker-calendar > tbody > tr > td:last-child a {
-  color: #7f23f3;
+  color: #353eff;
 }
 .datepicker .ui-datepicker-calendar > thead > tr > th:first-child {
   color: #f53232 !important;
 }
 .datepicker .ui-datepicker-calendar > thead > tr > th:last-child {
-  color: #7f23f3 !important;
+  color: #353eff !important;
 }
 .datepicker .inp:focus {
   outline: none;
@@ -1396,7 +1396,7 @@ input[type="file"] {
   color: #222;
 }
 .fc-day-sat a {
-  color: #7f23f3;
+  color: #353eff;
   text-decoration: none;
 }
 .fc-day-sun a {
@@ -1431,13 +1431,13 @@ input[type="file"] {
   padding: 10px;
 }
 .fc-h-event .fc-event-main {
-  background: #7f23f3;
+  background: #353eff;
 }
 .fc-event-title {
   color: #fff;
 }
 .fc-daygrid-event-dot {
-  border-color: #7f23f3;
+  border-color: #353eff;
 }
 .fc-h-event .fc-event-title-container {
   padding: 0px 10px;
@@ -1573,8 +1573,19 @@ input[type="file"] {
   min-width: 100px;
   font-size: 14px;
 }
-.label_wrap.inline .desc {
+.label_wrap.search {
 }
+.label_wrap.search .result_box {
+  margin-top: 10px;
+}
+.label_wrap.search .result_box > ul {
+  padding: 12px;
+  background-color: #efefef;
+  border-radius: 5px;
+  height: 100px;
+  overflow-y: scroll;
+}
+
 .label_wrap > label {
   width: fit-content;
 }
@@ -1864,15 +1875,19 @@ input[type="file"] {
   width: 450px;
 }
 .imgfile.pc {
-  /* width: 500px; */
-  /* height: 240px; */
   aspect-ratio: 1920 / 700;
   width: 100%;
 }
 .imgfile.mobile {
-  /* width: 400px; */
-  /* height: 530px; */
-  aspect-ratio: 400 / 530;
+  aspect-ratio: 320 / 300;
+  width: 100%;
+}
+.imgfile.pc.sub {
+  aspect-ratio: 1140 / 700;
+  width: 100%;
+}
+.imgfile.mobile.sub {
+  aspect-ratio: 320 / 300;
   width: 100%;
 }
 .date_wrap {

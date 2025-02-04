@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>회원관리 / 탈퇴회원</title>
+    <title>참여관리 / 지원관리</title>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -54,22 +54,15 @@
       <!----======== 관리자 레이아웃 상단 끝 ========---->
       <!----======== 내용부분    ========---->
       <section id="admin_contents_wrap">
-        <p class="title">회원관리 / 탈퇴회원</p>
+        <p class="title">참여관리 / 지원관리</p>
         <article class="board">
           <div class="filter_wrap">
             <div>
-              <p class="name">승인일</p>
+              <p class="name">등록일</p>
               <input type="date" /> - <input type="date" />
             </div>
             <div>
               <p>검색어</p>
-              <select>
-                <option>전체</option>
-                <option>아이디</option>
-                <option>이름</option>
-                <option>휴대폰 번호</option>
-                <option>인스타/유튜브 아이디</option>
-              </select>
               <input
                 class="text"
                 style="width: 260px"
@@ -87,92 +80,45 @@
 
         <article id="search_result">
           <div class="btn_area">
-            <button onclick="open_modal('#revert_account_modal')">복구</button>
-            <!-- <button onclick="open_modal('#alret_modal')">
-              목록 미선택 상태 모달
-            </button> -->
-            <button class="green">
-              <i class="fa fa-download" aria-hidden="true"></i>엑셀 다운로드
-            </button>
-            <select>
-              <option>20개</option>
-              <option>30개</option>
-              <option>50개</option>
-              <option>100개</option>
+            진행상태&nbsp;
+            <select class="right">
+              <option>대기</option>
+              <option selected>진행중</option>
+              <option>종료</option>
             </select>
           </div>
           <table class="table_defalt">
             <thead>
               <tr>
-                <th width="30px"><input type="checkbox" /></th>
-                <th width="50px">번호</th>
                 <th width="80px">관리</th>
-                <th width="200px">아이디</th>
-                <th width="120px">이름</th>
-                <th width="220px">휴대폰번호</th>
-                <th width="120px">생년월일</th>
-                <th width="80px">성별</th>
-                <th width="120px">탈퇴일</th>
-                <th width="*">메모</th>
+                <th width="120px">캠페인번호</th>
+                <th width="*">상품명</th>
+                <th width="200px">캠페인 유형</th>
+                <th width="200px">캠페인 기간</th>
+                <th width="120px">진행상태</th>
+                <th width="80px">리워드</th>
+                <th width="120px">지원자</th>
+                <th width="120px">캠페인 등록일</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><input type="checkbox" /></td>
-                <td>1</td>
                 <td>
                   <button
                     class="in_btn"
-                    onclick="location.href='member03_detail.html'"
+                    onclick="location.href='participate01_detail.html'"
                   >
                     상세
                   </button>
                 </td>
-                <td>dmonster@gmail.com</td>
-                <td>김수한무</td>
-                <td>010-1234-5678</td>
-                <td>1990-05-27</td>
-                <td>남자</td>
-                <td>2025-01-14</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>2</td>
-                <td>
-                  <button
-                    class="in_btn"
-                    onclick="location.href='member03_detail.html'"
-                  >
-                    상세
-                  </button>
-                </td>
-                <td>dmonster@gmail.com</td>
-                <td>거북이</td>
-                <td>010-1234-5678</td>
-                <td>1990-05-27</td>
-                <td>남자</td>
-                <td>2025-01-15</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>3</td>
-                <td>
-                  <button
-                    class="in_btn"
-                    onclick="location.href='member03_detail.html'"
-                  >
-                    상세
-                  </button>
-                </td>
-                <td>dmonster@gmail.com</td>
-                <td>거북이</td>
-                <td>010-1234-5678</td>
-                <td>1990-05-27</td>
-                <td>남자</td>
-                <td>2025-01-14</td>
-                <td>메모 입니다.</td>
+                <td>AA000001</td>
+                <td>3CE 캐시미어 허그 립스틱 10colors</td>
+                <td>Instagram, Youtube</td>
+                <td>2025-01-21~2025-02-07</td>
+                <td>진행중</td>
+                <td>100P</td>
+                <td>100</td>
+                <td>2025-01-20</td>
               </tr>
             </tbody>
           </table>
@@ -181,14 +127,37 @@
         <!----======== 내용부분 끝 ========---->
 
         <!-- ======== 모달창 ========-->
-        <!-- 복구 모달 -->
-        <article id="revert_account_modal" class="order_modal fullpage_modal">
+        <!-- 승인 모달 -->
+        <article id="complete_modal" class="order_modal fullpage_modal">
           <div class="board" style="height: 240px; top: 200px; width: 710px">
             <a class="circle_btn" onclick="close_modal()"
               ><i class="fa fa-times" aria-hidden="true"></i
             ></a>
             <p class="title"></p>
-            <p class="alret_txt">복구 하시겠습니까?</p>
+            <p class="alret_txt">승인 하시겠습니까?</p>
+            <div class="btn_area">
+              <button onclick="close_modal()">취소</button>
+              <button type="submit">확인</button>
+            </div>
+          </div>
+        </article>
+        <!--반려 모달 -->
+        <article id="reject_modal" class="order_modal fullpage_modal">
+          <div class="board" style="height: 330px; top: 200px; width: 900px">
+            <a class="circle_btn" onclick="close_modal()"
+              ><i class="fa fa-times" aria-hidden="true"></i
+            ></a>
+            <p class="title">반려</p>
+            <div class="label_wrap">
+              <label class="w-100 mb-0">
+                <input
+                  type="text"
+                  class="w-100"
+                  placeholder="반려사유를 입력해주세요."
+                />
+                <p class="comment"><span class="count_leng">0</span> / 50</p>
+              </label>
+            </div>
             <div class="btn_area">
               <button onclick="close_modal()">취소</button>
               <button type="submit">확인</button>

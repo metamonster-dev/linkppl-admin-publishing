@@ -80,17 +80,26 @@
               <th>주소</th>
               <td colspan="3">주소</td>
             </tr>
+            <!-- 등록한 계정 여러개 일 경우 -->
             <tr>
-              <th class="fw_900">Instagram</th>
+              <th class="fw_900" rowspan="3">Instagram</th>
               <td>linkppl_official</td>
-              <th class="fw_900">YouTube</th>
-              <td>@linkppl1234</td>
+              <th class="fw_900" rowspan="3">YouTube</th>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>linkppl_official</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>linkppl_official</td>
+              <td>-</td>
             </tr>
           </table>
           <p class="board_name mt_40">계정정보</p>
           <p class="board_name2">
-            요청 정보
-            <span class="board02_tap_more_txt">최종 요청일 : 2025-01-24</span>
+            반려 정보
+            <span class="board02_tap_more_txt">최종 처리일 : 2025-01-24</span>
           </p>
 
           <table id="member_detail_table" class="table_defalt">
@@ -98,14 +107,19 @@
               <th class="fw_900">Instagram</th>
               <td>linkppl_official</td>
               <th class="fw_900">YouTube</th>
-              <td>--</td>
+              <td>@linkppl1234</td>
+            </tr>
+            <tr>
+              <th class="fw_900">반려사유</th>
+              <td colspan="3">
+                해당계정이 확인되지 않습니다. 확인 후, 다시 입력해 주시기
+                바랍니다.
+              </td>
             </tr>
           </table>
         </article>
         <div class="btm btn_area">
           <button onclick="location.href='member04.html'">목록</button>
-          <button onclick="open_modal('#complete_modal')">승인</button>
-          <button onclick="open_modal('#reject_modal')">반려</button>
         </div>
       </section>
       <!----======== 내용부분 끝 ========---->
